@@ -1,0 +1,374 @@
+{
+    "bg_img": "assets/imgs/sample_grid.png",
+    "bg_img_glow": "assets/imgs/sample_grid_glow.png",
+    "bgm": "assets/audios/theme.mp3",
+    "button_up_sound": "assets/audios/按鈕1.mp3",
+    "button_up_sound_volume": 0.3,
+    "puzzle_complete_sound": "assets/audios/整個拼完.mp3",
+    "piece_correct_sound": "assets/audios/拼對1.mp3",
+    "pieces": [
+        {
+            "path": "assets/imgs/map/sin_pak.png",
+            "init_pos": "640,145",
+            "init_rotation": 90,
+            "target_pos": "460.8,33",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/sin_pak.png",
+            "place_name_sound": "assets/audios/Sin_pak.mp3"
+        },
+        
+        {
+            "path": "assets/imgs/map/gi_lan.png",
+            "init_pos": "560,180",
+            "init_rotation": 90,
+            "target_pos": "466.5,99.5",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/gi_lan.png",
+            "place_name_sound": "assets/audios/gi_lan.mp3"
+        },
+        {
+            "path": "assets/imgs/map/hua_lian.png",
+            "init_pos": "600,233",
+            "init_rotation": 0,
+            "target_pos": "400,233",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/hua_lian.png",
+            "place_name_sound": "assets/audios/hua_lian.mp3"
+        },
+        {
+            "path": "assets/imgs/map/tai_tang.png",
+            "init_pos": "123,300",
+            "init_rotation": 0,
+            "target_pos": "361,447",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/tai_tang.png",
+            "place_name_sound": "assets/audios/tai_tang.mp3"
+        },
+        {
+            "path": "assets/imgs/map/pin_tong.png",
+            "init_pos": "499,467.5",
+            "init_rotation": 0,
+            "target_pos": "309,566.5",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/pin_tong.png",
+            "place_name_sound": "assets/audios/pin_tong.mp3"
+        },
+        {
+            "path": "assets/imgs/map/ko_hiong.png",
+            "init_pos": "460,530",
+            "init_rotation": 90,
+            "target_pos": "248,440",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/ko_hiong.png",
+            "place_name_sound": "assets/audios/ko_hiong.mp3"
+        },
+        {
+            "path": "assets/imgs/map/tai_lam.png",
+            "init_pos": "628,453",
+            "init_rotation": 90,
+            "target_pos": "228,453",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/tai_lam.png",
+            "place_name_sound": "assets/audios/tai_lam.mp3"
+        },
+        {
+            "path": "assets/imgs/map/ka_gi.png",
+            "init_pos": "35,355.5",
+            "init_rotation": 0,
+            "target_pos": "235,405.5",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/ka_gi.png",
+            "place_name_sound": "assets/audios/ka_gi.mp3"
+        },
+        {
+            "path": "assets/imgs/map/hun_lim.png",
+            "init_pos": "532,462",
+            "init_rotation": 90,
+            "target_pos": "232,362",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/hun_lim.png",
+            "place_name_sound": "assets/audios/hun_lim.mp3"
+        },
+        {
+            "path": "assets/imgs/map/lam_tau.png",
+            "init_pos": "121,569",
+            "init_rotation": 180,
+            "target_pos": "331,269",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/lam_tau.png",
+            "place_name_sound": "assets/audios/lam_tau.mp3"
+        },
+        {
+            "path": "assets/imgs/map/taiong_hua.png",
+            "init_pos": "158,204",
+            "init_rotation": 90,
+            "target_pos": "258,282",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/taiong_hua.png",
+            "place_name_sound": "assets/audios/taiong_hua.mp3"
+        },
+        {
+            "path": "assets/imgs/map/tai_tiong.png",
+            "init_pos": "121,523",
+            "init_rotation": 90,
+            "target_pos": "301,223",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/tai_tiong.png",
+            "place_name_sound": "assets/audios/tai_tiong.mp3"
+        },
+        {
+            "path": "assets/imgs/map/biau_lik.png",
+            "init_pos": "203,212",
+            "init_rotation": 90,
+            "target_pos": "333,160.5",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/biau_lik.png",
+            "place_name_sound": "assets/audios/biau_lik.mp3"
+        },
+        {
+            "path": "assets/imgs/map/sin_tik.png",
+            "init_pos": "150,314",
+            "init_rotation": 180,
+            "target_pos": "390,114",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/sin_tik.png",
+            "place_name_sound": "assets/audios/sin_tik.mp3"
+        },
+        {
+            "path": "assets/imgs/map/tho_hng.png",
+            "init_pos": "202,105",
+            "init_rotation": 90,
+            "target_pos": "404,78",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/tho_hng.png",
+            "place_name_sound": "assets/audios/tho_hng.mp3"
+        },
+        {
+            "path": "assets/imgs/map/tai_pak.png",
+            "init_pos": "640,80",
+            "init_rotation": 180,
+            "target_pos": "499,56",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/tai_pak.png",
+            "place_name_sound": "assets/audios/tai_pak.mp3"
+        },
+        {
+            "path": "assets/imgs/map/kue_lang.png",
+            "init_pos": "600,35",
+            "init_rotation": 90,
+            "target_pos": "530,58",
+            "target_rotation": 0,
+            "preview_hint_path": "assets/imgs/ch_map/kue_lang.png",
+            "place_name_sound": "assets/audios/kue_lang.mp3"
+        }
+    ],
+    "startButton": {
+        "icon_path": "assets/imgs/startBtn.png",
+        "icon_pressed_path": "assets/imgs/startBtn_pressed.png",
+        "x_a": 0.5,
+        "x_b": -80,
+        "y_a": 0.5,
+        "y_b": -120,
+        "w": 190,
+        "h": 150
+    },
+    "soundButton": {
+        "icon_path": "assets/imgs/soundBtn.png",
+        "icon_pressed_path": "assets/imgs/soundBtn_pressed.png",
+        "soundMutedIcon_path": "assets/imgs/soundMutedBtn.png",
+        "soundMutedPressedIcon_path": "assets/imgs/soundMutedBtn_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0,
+        "y_b": 20,
+        "w": 100,
+        "h": 100
+    },
+    "restartButton": {
+        "icon_path": "assets/imgs/restartBtn.png",
+        "icon_pressed_path": "assets/imgs/restartBtn_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0.2,
+        "y_b": -35,
+        "w": 100,
+        "h": 100
+    },
+    "targetHintButton": {
+        "icon_path": "assets/imgs/targetHintBtn.png",
+        "icon_pressed_path": "assets/imgs/targetHintBtn_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0,
+        "y_b": 0,
+        "w": 100,
+        "h": 100
+    },
+    "previewHintButton": {
+        "icon_path": "assets/imgs/previewHintBtn.png",
+        "icon_pressed_path": "assets/imgs/previewHintBtn_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0.2,
+        "y_b": 60,
+        "w": 100,
+        "h": 100
+    },
+    "endButton": {
+        "icon_path": "assets/imgs/endBtn.png",
+        "icon_pressed_path": "assets/imgs/endBtn_pressed.png",
+        "x_a": 0.5,
+        "x_b": -60,
+        "y_a": 0.5,
+        "y_b": -20,
+        "w": 120,
+        "h": 40
+    },
+    
+    "customButtons": [
+  {
+        "icon_path": "assets/imgs/buy.png",
+        "icon_pressed_path": "assets/imgs/buy_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0.5,
+        "y_b": 200,
+        "w": 100,
+        "h": 100,
+        "link": "https://famistore.famiport.com.tw/famistore/users/5189971/merchandises/67b938c425b29fb86ed04377"
+    },
+    {
+        "icon_path": "assets/imgs/listen.png",
+        "icon_pressed_path": "assets/imgs/listen_pressed.png",
+        "x_a": 0,
+        "x_b": 20,
+        "y_a": 0.5,
+        "y_b": 300,
+        "w": 100,
+        "h": 100,
+        "link": "index_song.html"
+    },
+  {
+    "name": "leftButton",
+    "icon_path": "assets/imgs/LBtn01.png",
+    "icon_pressed_path": "assets/imgs/LBtn01.png",
+    "x": 140,
+    "y": 5,
+    "w": 250,
+    "h": 160,
+    "audio": "assets/audios/taiwan.mp3"
+  },
+  {
+    "name": "rightButton",
+    "icon_path": "assets/imgs/RBtn01.png",
+    "icon_pressed_path": "assets/imgs/RBtn01.png",
+    "x": 570,
+    "y": 700,
+    "w": 100,
+    "h": 100,
+    "audio": "assets/audios/hahataiwan.mp3"
+  },
+  {
+    "name": "lik_to",
+    "icon_path": "assets/imgs/map/lik_to.png",
+    "icon_pressed_path": "assets/imgs/map/lik_to.png",
+    "x": 480,
+    "y": 590,
+    "w": 45,
+    "h": 45,
+    "audio": "assets/audios/lik_to.mp3"
+  },
+  {
+    "name": "sio_lio_khio",
+    "icon_path": "assets/imgs/map/sio_lio_khio.png",
+    "icon_pressed_path": "assets/imgs/map/sio_lio_khio.png",
+    "x": 240,
+    "y": 670,
+    "w": 80,
+    "h": 55,
+    "audio": "assets/audios/sio_lio_khio.mp3"
+  },
+  {
+    "name": "lan_su",
+    "icon_path": "assets/imgs/map/lan_su.png",
+    "icon_pressed_path": "assets/imgs/map/lan_su.png",
+    "x": 500,
+    "y": 735,
+    "w": 50,
+    "h": 50,
+    "audio": "assets/audios/lan_su.mp3"
+  },
+  {
+    "name": "phinn_oo",
+    "icon_path": "assets/imgs/map/phinn_oo.png",
+    "icon_pressed_path": "assets/imgs/map/phinn_oo.png",
+    "x": 115,
+    "y": 380,
+    "w": 100,
+    "h": 115,
+    "audio": "assets/audios/phinn_oo.mp3"
+  },
+  {
+    "name": "ku_suann_to",
+    "icon_path": "assets/imgs/map/ku_suann_to.png",
+    "icon_pressed_path": "assets/imgs/map/ku_suann_to.png",
+    "x": 592,
+    "y": 149,
+    "w": 55,
+    "h": 50,
+    "audio": "assets/audios/ku_suann_to.mp3"
+  }
+],
+"customButtons2": [
+  {
+    "name": "笑咍咍遊台灣-主題歌唸謠",
+    "icon_path": "assets/imgs/song_1.png",
+    "icon_pressed_path": "assets/imgs/song_1.png",
+    "x_a": 0,
+    "x_b": 20,
+    "y_a": 0.5,
+    "y_b": -80,
+    "w": 100,
+    "h": 100,
+    "audio": "assets/audios/主題詩節奏朗讀.mp3",
+    "popup_img": "assets/imgs/song_1.jpg"
+  },
+  {
+  "name": "笑咍咍遊台灣-主題歌大合唱",
+  "icon_path": "assets/imgs/song_2.png",
+  "icon_pressed_path": "assets/imgs/song_2.png",
+  "x_a": 0,
+  "x_b": 20,
+  "y_a": 0.5,
+  "y_b": 20,
+  "w": 100,
+  "h": 100,
+  "audio": "assets/audios/主題歌大合唱.mp3",
+  "popup_img": "assets/imgs/song_1.jpg"
+  },
+  {
+  "name": "笑咍咍遊台灣-主題詩",
+  "icon_path": "assets/imgs/song_3.png",
+  "icon_pressed_path": "assets/imgs/song_3.png",
+  "x_a": 0,
+  "x_b": 20,
+  "y_a": 0.5,
+  "y_b": 100,
+  "w": 100,
+  "h": 100,
+  "audio": "assets/audios/theme_poem.mp3",
+  "popup_img": "assets/imgs/song_2.jpg"
+ }
+],
+"listenButton": {
+        "icon_path": "assets/imgs/listenBtn.png",
+        "icon_pressed_path": "assets/imgs/listenBtn_pressed.png",
+        "x_a": 0.5,
+        "x_b": -60,
+        "y_a": 0.5,
+        "y_b": 50,
+        "w": 120,
+        "h": 40
+    },
+    "endUrl": ""
+}

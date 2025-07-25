@@ -1,0 +1,179 @@
+{
+  "bg_img": "assets/imgs/sample_grid.png",
+  "bg_img_glow": "assets/imgs/sample_grid_glow.png",
+  "button_up_sound": "assets/audios/按鈕1.mp3",
+  "button_up_sound_volume": 0.3,
+  "pieces": [],
+  "customButtons": [
+    {
+      "name": "sin_pak",
+      "icon_path": "assets/imgs/map/sin_pak.png",
+      "icon_pressed_path": "assets/imgs/map/sin_pak.png",
+      "x": 460.8,
+      "y": 33.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/Sin_pak.mp3"
+    },
+    {
+      "name": "tai_pak",
+      "icon_path": "assets/imgs/map/tai_pak.png",
+      "icon_pressed_path": "assets/imgs/map/tai_pak.png",
+      "x": 499.0,
+      "y": 56.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/tai_pak.mp3"
+    },
+    {
+      "name": "kue_lang",
+      "icon_path": "assets/imgs/map/kue_lang.png",
+      "icon_pressed_path": "assets/imgs/map/kue_lang.png",
+      "x": 530.0,
+      "y": 58.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/kue_lang.mp3"
+    },
+    {
+      "name": "gi_lan",
+      "icon_path": "assets/imgs/map/gi_lan.png",
+      "icon_pressed_path": "assets/imgs/map/gi_lan.png",
+      "x": 466.5,
+      "y": 99.5,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/gi_lan.mp3"
+    },
+    {
+      "name": "hua_lian",
+      "icon_path": "assets/imgs/map/hua_lian.png",
+      "icon_pressed_path": "assets/imgs/map/hua_lian.png",
+      "x": 401.0,
+      "y": 233.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/hua_lian.mp3"
+    },
+    {
+      "name": "tai_tang",
+      "icon_path": "assets/imgs/map/tai_tang.png",
+      "icon_pressed_path": "assets/imgs/map/tai_tang.png",
+      "x": 363.0,
+      "y": 447.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/tai_tang.mp3"
+    },
+    {
+      "name": "pin_tong",
+      "icon_path": "assets/imgs/map/pin_tong.png",
+      "icon_pressed_path": "assets/imgs/map/pin_tong.png",
+      "x": 309.0,
+      "y": 567.5,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/pin_tong.mp3"
+    },
+    {
+      "name": "ko_hiong",
+      "icon_path": "assets/imgs/map/ko_hiong.png",
+      "icon_pressed_path": "assets/imgs/map/ko_hiong.png",
+      "x": 248.0,
+      "y": 440.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/ko_hiong.mp3"
+    },
+    {
+      "name": "tai_lam",
+      "icon_path": "assets/imgs/map/tai_lam.png",
+      "icon_pressed_path": "assets/imgs/map/tai_lam.png",
+      "x": 228.0,
+      "y": 453.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/tai_lam.mp3"
+    },
+    {
+      "name": "ka_gi",
+      "icon_path": "assets/imgs/map/ka_gi.png",
+      "icon_pressed_path": "assets/imgs/map/ka_gi.png",
+      "x": 235.0,
+      "y": 405.5,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/ka_gi.mp3"
+    },
+    {
+      "name": "hun_lim",
+      "icon_path": "assets/imgs/map/hun_lim.png",
+      "icon_pressed_path": "assets/imgs/map/hun_lim.png",
+      "x": 232.0,
+      "y": 362.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/hun_lim.mp3"
+    },
+    {
+      "name": "lam_tau",
+      "icon_path": "assets/imgs/map/lam_tau.png",
+      "icon_pressed_path": "assets/imgs/map/lam_tau.png",
+      "x": 331.0,
+      "y": 269.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/lam_tau.mp3"
+    },
+    {
+      "name": "taiong_hua",
+      "icon_path": "assets/imgs/map/taiong_hua.png",
+      "icon_pressed_path": "assets/imgs/map/taiong_hua.png",
+      "x": 258.0,
+      "y": 282.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/taiong_hua.mp3"
+    },
+    {
+      "name": "tai_tiong",
+      "icon_path": "assets/imgs/map/tai_tiong.png",
+      "icon_pressed_path": "assets/imgs/map/tai_tiong.png",
+      "x": 301.0,
+      "y": 223.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/tai_tiong.mp3"
+    },
+    {
+      "name": "biau_lik",
+      "icon_path": "assets/imgs/map/biau_lik.png",
+      "icon_pressed_path": "assets/imgs/map/biau_lik.png",
+      "x": 333.0,
+      "y": 160.5,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/biau_lik.mp3"
+    },
+    {
+      "name": "sin_tik",
+      "icon_path": "assets/imgs/map/sin_tik.png",
+      "icon_pressed_path": "assets/imgs/map/sin_tik.png",
+      "x": 390.0,
+      "y": 114.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/sin_tik.mp3"
+    },
+    {
+      "name": "tho_hng",
+      "icon_path": "assets/imgs/map/tho_hng.png",
+      "icon_pressed_path": "assets/imgs/map/tho_hng.png",
+      "x": 402.0,
+      "y": 78.0,
+      "w": 100,
+      "h": 100,
+      "audio": "assets/audios/tho_hng.mp3"
+    }
+  ]
+}

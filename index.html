@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Puzzle</title>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  canvas {
+    display: block;
+    margin: auto;
+    border: 0;
+    cursor: default;
+    touch-action: none;
+  }
+
+#startCover {
+  position: fixed;
+  top: 0; /* ✅ 手機與桌機都從最頂開始 */
+  left: 50%;
+  width: 95vw;
+  max-width: 600px;
+  height: auto;
+  max-height: 100vh;
+  transform: translateX(-50%); /* ✅ 水平置中，不再往下位移 */
+  background: #fff;
+  z-index: 9999;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#startCover img {
+  width: 140%;             /* ✅ 手機圖片放得更大 */
+  height: auto;
+  object-fit: contain;
+  margin-top: 0;           /* ✅ 靠齊上方 */
+}
+
+#startText {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #startCover {
+    width: 900px;
+    height: auto;
+    max-height: 95vh;
+    transform: translateX(-50%);
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #startCover img {
+    width: 130%;               /* ✅ 桌機版圖片放大到 130% */
+    height: auto;
+    object-fit: contain;
+    margin-top: 0;
+  }
+
+  #startText {
+    font-size: 20px;
+    margin-top: 16px;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+  <!-- 遮罩封面，讀取 level_index.json 的圖片 -->
+  <div id="startCover">
+    <img id="coverImg" src="" alt="開始封面">
+    <div id="startText">點擊圖片開始遊戲</div>
+  </div>
+
+  <!-- 遊戲主畫布 -->
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+  <!-- 遊戲主程式 -->
+  <script src="./puzzleBundle.nomin.js"></script>
+  <script src="./puzzleBundle_custom.min.js"></script>
+
+  <script type="module">
+  async function init() {
+    const coverData = await fetch('./leve_index.json').then(res => res.json());
+    const coverImg = document.getElementById('coverImg');
+    coverImg.src = coverData.cover_img || 'assets/imgs/sample_grid1.png';
+
+    document.getElementById('startCover').addEventListener('click', async () => {
+      document.getElementById('startCover').style.display = 'none';
+
+      const levelRes = await fetch('./level.json');
+      const levelData = await levelRes.json();
+      const canvas = document.getElementById('gameCanvas');
+
+      new PuzzleCanvas(canvas, levelData, {
+        snapThreshold: 20,
+        alphaThreshold: 20
+      });
+    });
+  }
+
+  init(); // ⬅️ 放在 function 外部執行
+</script>
+
+</body>
+
+</html>

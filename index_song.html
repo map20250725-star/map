@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>點讀地圖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    #wrapper-container {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: top left;
+    }
+
+    #wrapper {
+      width: 800px;
+      height: 600px;
+      position: relative;
+      background: url('assets/imgs/sample_grid.png') no-repeat center center;
+      background-size: contain;
+    }
+
+    .button-img {
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .button-img:hover {
+      transform: scale(1.1);
+    }
+
+    #backPuzzleBtn {
+      position: absolute;
+      top: 11px;
+      left: 200px;
+      padding: 8px 14px;
+      font-size: 16px;
+      background-color: #515457;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    #backPuzzleBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper-container">
+    <div id="wrapper">
+      <button id="backPuzzleBtn">點鬥圖  聽讀音</button>
+    </div>
+  </div>
+
+  <script>
+    const buttons = [
+      { name: "gi_lan", x: 445.5, y: 78.5, w: 109, h: 113, img: "gi_lan.png", audio: "gi_lan.mp3" },
+      { name: "hua_lian", x: 400.0, y: 175.0, w: 127, h: 218, img: "hua_lian.png", audio: "hua_lian.mp3" },
+      { name: "tai_tang", x: 370.0, y: 330.0, w: 115, h: 201, img: "tai_tang.png", audio: "tai_tang.mp3" },
+      { name: "ko_hiong", x: 286.0, y: 329.0, w: 132, h: 167, img: "ko_hiong.png", audio: "ko_hiong.mp3" },
+      { name: "pin_tong", x: 327.0, y: 424.5, w: 81, h: 155, img: "pin_tong.png", audio: "pin_tong.mp3" },
+
+      { name: "lam_tau", x: 348.0, y: 205.0, w: 114, h: 130, img: "lam_tau.png", audio: "lam_tau.mp3" },
+      { name: "ka_gi", x: 275.0, y: 302.5, w: 128, h: 75, img: "ka_gi.png", audio: "ka_gi.mp3" },
+      { name: "tai_lam", x: 271.0, y: 339.0, w: 85, h: 90, img: "tai_lam.png", audio: "tai_lam.mp3" },      
+      { name: "hun_lim", x: 276.0, y: 271.0, w: 95, h: 60, img: "hun_lim.png", audio: "hun_lim.mp3" },
+      { name: "taiong_hua", x: 292.0, y: 213.0, w: 70, h: 70, img: "taiong_hua.png", audio: "taiong_hua.mp3" },
+      { name: "tai_tiong", x: 327.0, y: 169.0, w: 145, h: 90, img: "tai_tiong.png", audio: "tai_tiong.mp3" },
+      { name: "lik_to", x: 469.0, y: 425.0, w: 42, h: 36, img: "lik_to.png", audio: "lik_to.mp3" },
+      { name: "sio_lio_khio", x: 249.0, y: 521.0, w: 72, h: 34, img: "sio_lio_khio.png", audio: "sio_lio_khio.mp3" },
+      { name: "lan_su", x: 465.0, y: 536.0, w: 46, h: 42, img: "lan_su.png", audio: "lan_su.mp3" },
+      { name: "phinn_oo", x: 200.0, y: 253.0, w: 75, h: 101, img: "phinn_oo.png", audio: "phinn_oo.mp3" },
+      { name: "ku_suann_to", x: 553.0, y: 111.0, w: 52, h: 50, img: "ku_suann_to.png", audio: "ku_suann_to.mp3" },
+      { name: "sin_pak", x: 442.8, y: 25, w: 116, h: 110, img: "sin_pak.png", audio: "Sin_pak.mp3" },
+      { name: "tai_pak", x: 469.0, y: 43.0, w: 40, h: 42, img: "tai_pak.png", audio: "tai_pak.mp3" },
+      { name: "kue_lang", x: 498.0, y: 45.0, w: 26, h: 26, img: "kue_lang.png", audio: "kue_lang.mp3" },
+      { name: "biau_lik", x: 349.0, y: 123.5, w: 92, h: 75, img: "biau_lik.png", audio: "biau_lik.mp3" },
+      { name: "sin_tik", x: 382.0, y: 87.0, w: 87, h: 90, img: "sin_tik.png", audio: "sin_tik.mp3" },
+
+      { name: "tho_hng", x: 393.0, y: 62.0, w: 85, h: 87, img: "tho_hng.png", audio: "tho_hng.mp3" },
+
+    ];
+
+        const wrapper = document.getElementById('wrapper');
+
+    buttons.forEach(btn => {
+      const img = document.createElement('img');
+      img.src = `assets/imgs/map/${btn.img}`;
+      img.className = 'button-img';
+      img.style.left = `${btn.x}px`;
+      img.style.top = `${btn.y}px`;
+      img.style.width = `${btn.w}px`;
+      img.style.height = `${btn.h}px`;
+      img.onclick = () => {
+        const audio = new Audio(`assets/audios/${btn.audio}`);
+        audio.play();
+      };
+      wrapper.appendChild(img);
+    });
+
+    function resizeWrapper() {
+      const container = document.getElementById('wrapper-container');
+      const baseScale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
+
+      // 判斷是否為手機（寬度小於等於 768px）
+      const isMobile = window.innerWidth <= 768;
+
+      if (isMobile) {
+        const mobileScale = baseScale * 1.1; // 放大一點
+        container.style.transform = `translateX(-27%) scale(${mobileScale})`;
+      } else {
+        container.style.transform = `translateX(-62%) scale(${baseScale})`;
+      }
+    }
+
+    window.addEventListener('resize', resizeWrapper);
+    resizeWrapper();
+
+    document.getElementById('backPuzzleBtn').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
