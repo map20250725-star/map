@@ -235,7 +235,7 @@
         "y_b": 200,
         "w": 100,
         "h": 100,
-        "link": "https://famistore.famiport.com.tw/famistore/users/5189971/merchandises/67b938c425b29fb86ed04377"
+        "link": "javascript:window.open('https://famistore.famiport.com.tw/famistore/users/5189971/merchandises/67b938c425b29fb86ed04377', '_blank')"
     },
     {
         "icon_path": "assets/imgs/listen.png",
@@ -371,4 +371,5 @@
         "h": 40
     },
     "endUrl": ""
+
 }
