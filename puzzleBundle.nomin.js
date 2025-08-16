@@ -500,6 +500,12 @@
               this.offsetX = x - p.x;
               this.offsetY = y - p.y;
               this.canvas.style.cursor = "grabbing";
+              const idx = this.pieces.indexOf(p);
+              if (idx > -1) {
+              this.pieces.splice(idx, 1);
+              this.pieces.push(p);
+            }
+            this.needsRedraw = true;
             }
             break;
           }
@@ -668,10 +674,30 @@ this.ctx.drawImage(drawingBgImg, 0, 0);
         this.customButtons2.forEach(btn => btn.draw(this.ctx));
 
         // ✅ 3. 中層：拼圖圖塊 pieces（畫在 startButton 之前）
+        //for (const p of this.pieces) {
+          //p.draw({
+            //ctx: this.ctx,
+            //isFocused: this.focusedPiece === p,
+            //snapThreshold: this.snapThreshold,
+            //showPreviewHint: this.showPreviewHint
+          //});
+        //}
+        // 先畫其它拼圖（沒有被聚焦的）
         for (const p of this.pieces) {
+          if (p === this.focusedPiece) continue;
           p.draw({
             ctx: this.ctx,
-            isFocused: this.focusedPiece === p,
+            isFocused: false,
+            snapThreshold: this.snapThreshold,
+            showPreviewHint: this.showPreviewHint
+          });
+        }
+        
+        // 最後再畫被聚焦的那塊（它的箭頭也會在最上層）
+        if (this.focusedPiece) {
+          this.focusedPiece.draw({
+            ctx: this.ctx,
+            isFocused: true,
             snapThreshold: this.snapThreshold,
             showPreviewHint: this.showPreviewHint
           });
