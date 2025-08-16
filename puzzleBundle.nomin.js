@@ -508,7 +508,8 @@
           this.customButtons.forEach(btn => btn.handleDown(x, y));
           this.customButtons2.forEach(btn => btn.handleDown(x, y));
           this.endButtons.forEach(btn => btn.handleDown(x, y));
-          this.listenButton.handleDown(x, y);
+          //this.listenButton.handleDown(x, y);
+          if (this.listenButton) this.listenButton.handleDown(x, y);
           return;
         }
       }
@@ -532,6 +533,10 @@
             buttonsToCheck.push(this.soundButton, this.restartButton, this.previewHintButton);
           } else if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
             buttonsToCheck.push(this.soundButton, this.restartButton, this.endButton);
+            this.endButtons.forEach(btn => buttonsToCheck.push(btn));
+            this.customButtons.forEach(btn => buttonsToCheck.push(btn));
+            this.customButtons2.forEach(btn => buttonsToCheck.push(btn));
+            if (this.listenButton) buttonsToCheck.push(this.listenButton);
           }
           this.customButtons.forEach(btn => buttonsToCheck.push(btn));
 
@@ -601,8 +606,8 @@
           this.customButtons.forEach(btn => btn.handleUp(x, y));
           this.customButtons2.forEach(btn => btn.handleUp(x, y));//新加
           this.endButtons.forEach(btn => btn.handleUp(x, y));//新加
-          this.listenButton.handleUp(x, y);
-
+          //this.listenButton.handleUp(x, y);
+          if (this.listenButton) this.listenButton.handleUp(x, y);
           return;
         }
       }
