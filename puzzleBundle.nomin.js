@@ -505,6 +505,7 @@
           this.soundButton.handleDown(x, y);
           this.restartButton.handleDown(x, y);
           this.endButton.handleDown(x, y);
+          this.previewHintButton.handleDown(x, y);   // ← 新增這行
           this.customButtons.forEach(btn => btn.handleDown(x, y));
           this.customButtons2.forEach(btn => btn.handleDown(x, y));
           this.endButtons.forEach(btn => btn.handleDown(x, y));
@@ -533,6 +534,7 @@
             buttonsToCheck.push(this.soundButton, this.restartButton, this.previewHintButton);
           } else if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
             buttonsToCheck.push(this.soundButton, this.restartButton, this.endButton);
+            buttonsToCheck.push(this.previewHintButton);  // ← 新增這行
             this.endButtons.forEach(btn => buttonsToCheck.push(btn));
             this.customButtons.forEach(btn => buttonsToCheck.push(btn));
             this.customButtons2.forEach(btn => buttonsToCheck.push(btn));
@@ -603,6 +605,7 @@
           this.soundButton.handleUp(x, y);
           this.restartButton.handleUp(x, y);
           this.endButton.handleUp(x, y);
+          this.previewHintButton.handleUp(x, y);   // ← 新增這行
           this.customButtons.forEach(btn => btn.handleUp(x, y));
           this.customButtons2.forEach(btn => btn.handleUp(x, y));//新加
           this.endButtons.forEach(btn => btn.handleUp(x, y));//新加
