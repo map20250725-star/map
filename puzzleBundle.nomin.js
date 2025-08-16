@@ -507,8 +507,14 @@
         if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
           this.soundButton.handleDown(x, y);
           this.restartButton.handleDown(x, y);
-          if (this.endButtonVisible) this.endButton.handleUp(x, y);   // ← 改這行
+          if (this.endButtonVisible) this.endButton.handleUp(x, y);
           this.previewHintButton.handleDown(x, y);   // ← 新增這行
+
+          if (this.endButtonVisible) {
+          this.endButton.handleDown(x, y);
+          this.endButtons.forEach(btn => btn.handleDown(x, y)); // 若也想一起延遲才放這裡
+          }
+          
           this.customButtons.forEach(btn => btn.handleDown(x, y));
           this.customButtons2.forEach(btn => btn.handleDown(x, y));
           this.endButtons.forEach(btn => btn.handleDown(x, y));
@@ -536,12 +542,19 @@
           } else if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_PLAYING) {
             buttonsToCheck.push(this.soundButton, this.restartButton, this.previewHintButton);
           } else if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
-            buttonsToCheck.push(this.soundButton, this.restartButton, this.endButton);
-            if (this.endButtonVisible) buttonsToCheck.push(this.endButton); // ← 只有可見才加入 hover 檢查
-            buttonsToCheck.push(this.previewHintButton);  // ← 新增這行
+            //if (this.endButtonVisible) {
+            //buttonsToCheck.push(this.endButton);
+            //this.endButtons.forEach(btn => buttonsToCheck.push(btn)); // 若也想讓 endButtons 跟著延遲，就放這裡
+            //}
+            //buttonsToCheck.push(this.previewHintButton);  // ← 新增這行
+            //this.endButtons.forEach(btn => buttonsToCheck.push(btn));
+            //this.customButtons.forEach(btn => buttonsToCheck.push(btn));
+            //this.customButtons2.forEach(btn => buttonsToCheck.push(btn));
+            //if (this.listenButton) buttonsToCheck.push(this.listenButton);
+            buttonsToCheck.push(this.soundButton, this.restartButton); 
+            if (this.endButtonVisible) buttonsToCheck.push(this.endButton);
+            buttonsToCheck.push(this.previewHintButton);
             this.endButtons.forEach(btn => buttonsToCheck.push(btn));
-            this.customButtons.forEach(btn => buttonsToCheck.push(btn));
-            this.customButtons2.forEach(btn => buttonsToCheck.push(btn));
             if (this.listenButton) buttonsToCheck.push(this.listenButton);
           }
           this.customButtons.forEach(btn => buttonsToCheck.push(btn));
@@ -678,7 +691,7 @@ this.ctx.drawImage(drawingBgImg, 0, 0);
           this.ctx.fillStyle = "rgba(0,0,0,0)";
           this.ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
           if (this.endButtonVisible) this.endButton.draw(this.ctx); // ← 加判斷
-          this.endButton.draw(this.ctx);
+          //this.endButton.draw(this.ctx);
           this.endButtons.forEach(btn => btn.draw(this.ctx));
         }
 
