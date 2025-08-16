@@ -61,6 +61,7 @@
         this.lastTimestamp = 0;
         this.needsRedraw = false;
         this.loop = this.loop.bind(this);
+        this.endButtonVisible = false; // ← 新增：控制 endButton 是否顯示
         this.dragging = false;
         this.draggedPiece = null;
         this.focusedPiece = null;
@@ -414,6 +415,8 @@
           this.bgm.currentTime = 0;
         }
         this.focusedPiece = null;
+
+        this.endButtonVisible = false; // ← 新增
       }
       getMousePos(event) {
         const rect = this.canvas.getBoundingClientRect();
@@ -504,7 +507,7 @@
         if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
           this.soundButton.handleDown(x, y);
           this.restartButton.handleDown(x, y);
-          this.endButton.handleDown(x, y);
+          if (this.endButtonVisible) this.endButton.handleUp(x, y);   // ← 改這行
           this.previewHintButton.handleDown(x, y);   // ← 新增這行
           this.customButtons.forEach(btn => btn.handleDown(x, y));
           this.customButtons2.forEach(btn => btn.handleDown(x, y));
@@ -534,6 +537,7 @@
             buttonsToCheck.push(this.soundButton, this.restartButton, this.previewHintButton);
           } else if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
             buttonsToCheck.push(this.soundButton, this.restartButton, this.endButton);
+            if (this.endButtonVisible) buttonsToCheck.push(this.endButton); // ← 只有可見才加入 hover 檢查
             buttonsToCheck.push(this.previewHintButton);  // ← 新增這行
             this.endButtons.forEach(btn => buttonsToCheck.push(btn));
             this.customButtons.forEach(btn => buttonsToCheck.push(btn));
@@ -598,13 +602,19 @@
           }
           if (isEnd) {
             this.state = _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END;
+            this.endButtonVisible = false; // 先隱藏
             this.audioPlayer.enqueue(this.puzzle_complete_sound);
+            const delay = this.levelData.endButtonDelayMs ?? 2000; // 預設 2 秒，可用 JSON 覆蓋
+            setTimeout(() => {
+              this.endButtonVisible = true;
+              this.needsRedraw = true;
+            }, delay);
           }
         }
         if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
           this.soundButton.handleUp(x, y);
           this.restartButton.handleUp(x, y);
-          this.endButton.handleUp(x, y);
+          if (this.endButtonVisible) this.endButton.handleDown(x, y); // ← 改這行
           this.previewHintButton.handleUp(x, y);   // ← 新增這行
           this.customButtons.forEach(btn => btn.handleUp(x, y));
           this.customButtons2.forEach(btn => btn.handleUp(x, y));//新加
@@ -667,6 +677,7 @@ this.ctx.drawImage(drawingBgImg, 0, 0);
         if (this.state === _state_js__WEBPACK_IMPORTED_MODULE_3__.G_END) {
           this.ctx.fillStyle = "rgba(0,0,0,0)";
           this.ctx.fillRect(0, 0, this.gameWidth, this.gameHeight);
+          if (this.endButtonVisible) this.endButton.draw(this.ctx); // ← 加判斷
           this.endButton.draw(this.ctx);
           this.endButtons.forEach(btn => btn.draw(this.ctx));
         }
