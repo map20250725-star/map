@@ -214,7 +214,7 @@
         "w": 100,
         "h": 100
     },
-    {
+    
     "endButton": {
         "icon_path": "assets/imgs/endBtn.png",
         "icon_pressed_path": "assets/imgs/endBtn_pressed.png",
@@ -227,7 +227,7 @@
     },
 
     "endButtonDelayMs": 60000,
-   }
+   
     "customButtons": [
   {
         "icon_path": "assets/imgs/buy.png",
@@ -376,6 +376,7 @@
     "endUrl": ""
 
 }
+
 
 
 
