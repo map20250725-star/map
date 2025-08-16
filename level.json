@@ -226,7 +226,7 @@
         "h": 40
     },
 
-    "endButtonDelayMs": 2000,
+    "endButtonDelayMs": 6000,
    
     "customButtons": [
   {
@@ -376,6 +376,7 @@
     "endUrl": ""
 
 }
+
 
 
 
